@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".filterPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/categories"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Categories"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/category"
+                android:spinnerMode="dropdown"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Price"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/fromPrice"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape"
+                android:ems="10"
+                android:hint="From ($)"
+                android:inputType="number"
+                android:shadowColor="@color/grey" />
+
+            <EditText
+                android:id="@+id/toPrice"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape"
+                android:ems="10"
+                android:hint="To ($)"
+                android:inputType="number"
+                android:shadowColor="@color/grey" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Distance"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/distanceCount"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Default"
+                android:textSize="15dp" />
+
+            <SeekBar
+                android:id="@+id/distanceSlider"
+                android:layout_width="370dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:max="1000"
+                android:progress="1000"/>
+
+            <TextView
+                android:id="@+id/sortBy"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Sort By"
+                android:textSize="15dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:id="@+id/sortChipGroup"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/mostRelevant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Most Relevant" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Newest First" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/closest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Oldest" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/priceHighToLow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Price: High To Low" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/priceLowToHigh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Price: Low To High" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/postedWithIn"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Posted within"
+                android:textSize="15dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:id="@+id/timeChipGroup"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/allListing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="All listings" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/oneDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Last 24h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/sevenDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Last 7 days" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/thirtyDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="true"
+                    app:chipBackgroundColor="@drawable/chip_selection"
+                    android:text="Last 30 days" />
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:text="Apply Filters"
+            android:layout_marginLeft="50dp"
+            ></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:text="Reset"
+            android:layout_marginLeft="50dp"></Button>
+    </LinearLayout>
+
+</RelativeLayout>
